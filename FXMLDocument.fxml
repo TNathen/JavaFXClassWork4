@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+
+
+<BorderPane id="BorderPane" prefHeight="400" prefWidth="625" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hw5_nt.FXMLDocumentController">
+    <fx:define>
+        <Font fx:id = "Font" size ="20"/>
+    </fx:define>
+    <top>
+        <MenuBar fx:id = "menuBar">
+            <menus>
+                <Menu text = "Menu">
+                    <MenuItem fx:id = "itmStart" text = "Start" onAction = "#handleStartStop"/>
+                    <MenuItem fx:id = "itmReset" text = "Reset, Ctrl+R" onAction = "#handleReset" accelerator="Shortcut+R"/>
+                    <MenuItem fx:id = "itmPause" text = "Pause" disable = "true" onAction = "#handleTogglePause"/>
+                    <MenuItem fx:id = "itmExit" text = "Exit, Esc" onAction = "#handleExit" accelerator="Esc"/>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox alignment="CENTER" >
+
+            <children>
+                <TextArea fx:id = "text" maxHeight="80" maxWidth="250"  text = "00:00:00.00" editable="false" >
+                    <font>
+                        <Font size = "40.0"/>
+                    </font>
+                </TextArea>
+                <HBox alignment="CENTER" minWidth="250" >
+                    <Button fx:id = "btnReset" text = "Reset" font = "$Font"  onAction = "#handleReset"/>
+                    <Button fx:id = "btnStart" text = "Start" font = "$Font" onAction = "#handleStartStop"/>
+                    <Button fx:id = "btnPause" text = "Pause" font = "$Font" minWidth = "100" disable = "true" onAction = "#handleTogglePause"/>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
+    
+</BorderPane>
